@@ -48,7 +48,7 @@ export default function Hero() {
           fontSize: '0.95rem', color: 'rgba(255,255,255,0.65)',
           lineHeight: 1.8, marginBottom: '2.5rem', fontWeight: 300, maxWidth: '440px',
         }}>
-          You've built a good life in South Africa. Now build something back home —
+          You've built a good life abroad. Now build something back home —
           a real asset, in a city that's growing fast, in a development unlike anything
           Kenya has seen before.
         </p>

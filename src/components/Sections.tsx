@@ -244,7 +244,7 @@ export function LeadCapture() {
       <div style={{ maxWidth: '600px', margin: '0 auto', textAlign: 'center', position: 'relative', zIndex: 1 }}>
         <div className="eyebrow" style={{ justifyContent: 'center' }}><div className="eyebrow-line" /><span className="eyebrow-text">Free resource</span></div>
         <h2 style={{ fontFamily: "'Playfair Display',serif", fontSize: 'clamp(1.8rem,3vw,2.5rem)', fontWeight: 400, color: '#fff', lineHeight: 1.2, margin: '0 0 1rem' }}>
-          Everything you need to know before buying property in Kenya from South Africa.
+          Everything you need to know before buying property in Nairobi from wherever you are.
         </h2>
         <p style={{ fontSize: '0.92rem', color: 'rgba(255,255,255,0.5)', lineHeight: 1.8, margin: '0 0 2.5rem', fontWeight: 300 }}>
           Legal process, ownership structure, how to transfer money, what questions to ask the developer, and what the diaspora gets wrong most often. Free. No spam, ever.
@@ -277,7 +277,7 @@ export function Footer() {
       <div style={{ maxWidth: '1100px', margin: '0 auto', display: 'grid', gridTemplateColumns: '2fr 1fr 1fr', gap: '4rem', paddingBottom: '2.5rem', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
         <div>
           <div style={{ fontFamily: "'Playfair Display',serif", fontSize: '1.3rem', color: '#fff', marginBottom: '0.75rem' }}>Kenya Diaspora <span style={{ color: '#c9a472' }}>Homes</span></div>
-          <p style={{ fontSize: '0.82rem', color: 'rgba(255,255,255,0.35)', lineHeight: 1.7, maxWidth: '260px', fontWeight: 300 }}>Connecting the Kenyan diaspora in South Africa with verified, premium property in Nairobi. Safely. Simply.</p>
+          <p style={{ fontSize: '0.82rem', color: 'rgba(255,255,255,0.35)', lineHeight: 1.7, maxWidth: '260px', fontWeight: 300 }}>Connecting the Kenyan diaspora worldwide with verified, premium property in Nairobi. Based in South Africa, on the ground in Nairobi. Safely. Simply.</p>
         </div>
         <div>
           <div style={{ fontSize: '0.68rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.25)', marginBottom: '1.25rem' }}>Properties</div>
