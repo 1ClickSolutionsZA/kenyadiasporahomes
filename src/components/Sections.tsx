@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import React from 'react'
 import { KEZA_LAIKA, AGENT } from '../data/properties'
 
 export function StatsBar() {
@@ -273,33 +273,26 @@ export function LeadCapture() {
 
 export function FloorPlans() {
   const floorplans = KEZA_LAIKA.images.floorplans || []
+  const [lightboxOpen, setLightboxOpen] = React.useState(false)
+  const [currentIndex, setCurrentIndex] = React.useState(0)
+  
   if (floorplans.length === 0) return null
   
+  const openLightbox = (index: number) => {
+    setCurrentIndex(index)
+    setLightboxOpen(true)
+  }
+  
+  const nextImage = () => setCurrentIndex((currentIndex + 1) % floorplans.length)
+  const prevImage = () => setCurrentIndex((currentIndex - 1 + floorplans.length) % floorplans.length)
+  
   return (
-    <section style={{ padding: '7rem 3rem', background: '#f9f9f9' }} id="floorplans">
-      <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
-        <h2 style={{ fontSize: '2.5rem', marginBottom: '3rem', textAlign: 'center', color: '#333' }}>Floor Plans</h2>
-        <div style={{ position: 'relative', width: '100%', overflow: 'hidden' }}>
-          <div style={{ display: 'flex', gap: '1.5rem', overflowX: 'auto', overflowY: 'hidden', scrollBehavior: 'smooth', WebkitOverflowScrolling: 'touch', paddingBottom: '1rem' }}>
-            {floorplans.map((plan, idx) => (
-              <a key={idx} href={plan.src} target="_blank" rel="noopener noreferrer" style={{ flex: '0 0 320px', minWidth: '320px', textDecoration: 'none', display: 'block', background: 'white', borderRadius: '8px', overflow: 'hidden', boxShadow: '0 2px 8px rgba(0,0,0,0.1)', transition: 'transform 0.3s, box-shadow 0.3s' }}
-                onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-4px)'; e.currentTarget.style.boxShadow = '0 4px 16px rgba(0,0,0,0.15)' }}
-                onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 2px 8px rgba(0,0,0,0.1)' }}
-              >
-                <div style={{ position: 'relative', overflow: 'hidden' }}>
-                  <img src={plan.src} alt={plan.alt} style={{ width: '100%', height: '240px', objectFit: 'cover', display: 'block' }} loading="lazy" />
-                  <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.7)', display: 'flex', alignItems: 'center', justifyContent: 'center', opacity: 0, transition: 'opacity 0.3s' }} className="floorplan-overlay">
-                    <span style={{ color: 'white', fontSize: '1.1rem', fontWeight: 600 }}>View Full Size</span>
-                  </div>
-                </div>
-                <p style={{ padding: '0.875rem', textAlign: 'center', fontSize: '0.9rem', fontWeight: 500, color: '#333', margin: 0 }}>{plan.caption}</p>
-              </a>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-  )
+    <>
+      <section style={{ padding: '7rem 3rem', background: '#f9f9f9' }} id="floorplans">
+        <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
+          <h2 style={{ fontSize: '2.5rem', marginBottom: '3rem', textAlign: 'center', color: '#333' }}>Floor Plans</h2>
+          <div style={{ position: 'relative', width: '100%', overflow: 'hidden' }}>
+            <div style={{ display: 'flex', gap: '1.5rem', overflowX: 'auto', overflowY: 'hidden', scrollBehavior: 'smooth', WebkitOverflowScrolling
 }
 export function Footer() {
   return (
