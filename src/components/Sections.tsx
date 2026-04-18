@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useRef } from 'react'
 import { KEZA_LAIKA, AGENT } from '../data/properties'
 
 export function StatsBar() {
@@ -273,8 +273,8 @@ export function LeadCapture() {
 
 export function FloorPlans() {
   const floorplans = KEZA_LAIKA.images.floorplans || []
-  const [lightboxOpen, setLightboxOpen] = React.useState(false)
-  const [currentIndex, setCurrentIndex] = React.useState(0)
+  const [lightboxOpen, setLightboxOpen] = useState(false)
+  const [currentIndex, setCurrentIndex] = useState(0)
   
   if (floorplans.length === 0) return null
   
