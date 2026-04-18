@@ -50,6 +50,32 @@ aerial: [
   { src: '/assets/images/aerial/Master Plan Ariel view.jpg', alt: 'Aerial view of full KEZA LAIKA development', caption: 'Full Development' },
   { src: '/assets/images/aerial/Master Plan.jpg', alt: 'Aerial master plan view of all three towers', caption: 'Master Plan' },
 ],
+floorplans: [
+      {
+        src: '/assets/images/floorplans/1BR.jpg',
+        alt: '1 Bedroom apartment floor plan - 50 sqm',
+        caption: '1 Bedroom',
+        unitType: '1 Bedroom',
+      },
+      {
+        src: '/assets/images/floorplans/1BR-Penthouse.jpg',
+        alt: '1 Bedroom Penthouse floor plan - 46 sqm',
+        caption: '1 Bedroom Penthouse',
+        unitType: '1 Bedroom Penthouse',
+      },
+      {
+        src: '/assets/images/floorplans/2BR.jpg',
+        alt: '2 Bedroom apartment floor plan - 79 sqm',
+        caption: '2 Bedroom',
+        unitType: '2 Bedroom',
+      },
+      {
+        src: '/assets/images/floorplans/3BR.jpg',
+        alt: '3 Bedroom apartment floor plan - 102 sqm',
+        caption: '3 Bedroom',
+        unitType: '3 Bedroom',
+      },
+    ],
   },
   videos: {
     heroBackground: {
