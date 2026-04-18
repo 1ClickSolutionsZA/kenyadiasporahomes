@@ -291,8 +291,29 @@ export function FloorPlans() {
       <section style={{ padding: '7rem 3rem', background: '#f9f9f9' }} id="floorplans">
         <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
           <h2 style={{ fontSize: '2.5rem', marginBottom: '3rem', textAlign: 'center', color: '#333' }}>Floor Plans</h2>
-          <div style={{ position: 'relative', width: '100%', overflow: 'hidden' }}>
-            <div style={{ display: 'flex', gap: '1.5rem', overflowX: 'auto', overflowY: 'hidden', scrollBehavior: 'smooth', WebkitOverflowScrolling
+          <div style={{ display: 'flex', gap: '1.5rem', overflowX: 'auto', paddingBottom: '1rem' }}>
+            {floorplans.map((plan, idx) => (
+              <button key={idx} onClick={() => openLightbox(idx)} style={{ flex: '0 0 320px', border: 'none', padding: 0, cursor: 'pointer', background: 'white', borderRadius: '8px', boxShadow: '0 2px 8px rgba(0,0,0,0.1)' }}>
+                <img src={plan.src} alt={plan.alt} style={{ width: '100%', height: '240px', objectFit: 'cover' }} />
+                <p style={{ padding: '0.875rem', textAlign: 'center', fontSize: '0.9rem', fontWeight: 500, color: '#333', margin: 0 }}>{plan.caption}</p>
+              </button>
+            ))}
+          </div>
+        </div>
+      </section>
+      {lightboxOpen && (
+        <div style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.95)', zIndex: 9999, display: 'flex', alignItems: 'center', justifyContent: 'center' }} onClick={() => setLightboxOpen(false)}>
+          <button onClick={(e) => { e.stopPropagation(); prevImage() }} style={{ position: 'absolute', left: '2rem', background: 'white', border: 'none', fontSize: '2rem', cursor: 'pointer', width: '50px', height: '50px', borderRadius: '50%' }}>‹</button>
+          <div onClick={(e) => e.stopPropagation()}>
+            <img src={floorplans[currentIndex].src} style={{ maxWidth: '90vw', maxHeight: '90vh' }} />
+            <p style={{ color: 'white', textAlign: 'center', marginTop: '1rem' }}>{floorplans[currentIndex].caption} ({currentIndex + 1}/{floorplans.length})</p>
+          </div>
+          <button onClick={(e) => { e.stopPropagation(); nextImage() }} style={{ position: 'absolute', right: '2rem', background: 'white', border: 'none', fontSize: '2rem', cursor: 'pointer', width: '50px', height: '50px', borderRadius: '50%' }}>›</button>
+          <button onClick={() => setLightboxOpen(false)} style={{ position: 'absolute', top: '2rem', right: '2rem', background: 'white', border: 'none', fontSize: '2rem', cursor: 'pointer', width: '50px', height: '50px', borderRadius: '50%' }}>×</button>
+        </div>
+      )}
+    </>
+  )
 }
 export function Footer() {
   return (
